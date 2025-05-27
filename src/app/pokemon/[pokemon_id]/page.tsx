@@ -18,6 +18,20 @@ type Params = {
 
 // In our case http://localhost:3000/pokemon/2 is the URL.
 // Where the 2 is the [pokemon_id] and passed as a parameter.
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { pokemon_id: string };
+}): Promise<Metadata> {
+  const name =
+    params.pokemon_id.charAt(0).toUpperCase() + params.pokemon_id.slice(1);
+
+  return {
+    title: `${name} - Pokédex`,
+  };
+}
 export default function PokemonPage({ params }: Params) {
   const { pokemon_id } = React.use(params);
   //pokemon - A constant state variable which stores the pokemon information and retains the data between renders.
