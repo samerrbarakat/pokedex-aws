@@ -56,7 +56,7 @@ export default function PokemonPage({ params }: Params) {
         console.error(error);
         setPokemonLoaded(true);
       });
-  }, []);
+  }, [pokemon_id]);
 
   return (
     <>

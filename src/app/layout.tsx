@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
-export const metadata = {
+export const metadata: Metadata = {
   title: "Pokédex",
   icons: {
     icon: "/myfavicon.ico",
